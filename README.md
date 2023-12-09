@@ -9,11 +9,10 @@ output: github_document
 # courseraquakes
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-courseraquakes is the capstone project for coursera specialisation "Mastering R software development". 
-This package load, clean up, and visualize National Centers for Environmental Information (NCEI) earthquake data.
-
+courseraquakes is the capstone project for coursera specialisation "Mastering R software development". This package load, clean up, and visualize National Centers for Environmental Information (NCEI) earthquake data.
 
 ## Installation
 
@@ -58,7 +57,7 @@ plot(timeline_plot)
 <p class="caption">plot of chunk timeline plot</p>
 </div>
 
-If the label is turned on, then you can determine if you want to limit the amount of label shown based on n highest magnitude earthquake. 
+If the label is turned on, then you can determine if you want to limit the amount of label shown based on n highest magnitude earthquake.
 
 
 ```r
@@ -71,9 +70,10 @@ plot(timeline_plot)
 <img src="man/figures/README-timeline with label-1.png" alt="plot of chunk timeline with label" width="100%" />
 <p class="caption">plot of chunk timeline with label</p>
 </div>
+
 Notice how we define the `y` axis. If not defined, then all earthquake will coalescence into one line.
 
-If you want to specify how you sort your data frame for label filtering/limiting, then you need to build your own ggplot2 data. 
+If you want to specify how you sort your data frame for label filtering/limiting, then you need to build your own ggplot2 data.
 
 
 ```r
@@ -121,8 +121,8 @@ The package also have wrapper for leaflet function. This will return interactive
 ```r
 map <- eq_map(df = clean_df, annotation = 'popup_text', minyear = 2001, maxyear = 2015, countries = c('CONGO', 'TANZANIA'))
 ```
-The resulting image will look like this 
-[](man/figures/interactive_map.png "Interactive map example")
+
+The resulting image will look like this ![sample map](man/figures/interactive_map.png)
 
 Credit:
 
