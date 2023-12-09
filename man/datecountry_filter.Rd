@@ -34,5 +34,5 @@ Helper function for timeline plot creation
 }
 \examples{
 clean_df <- initial_cleaning()
-filtered_df <- clean_df \%>\% datecountry_filter(2012, 03, 01, 2021, 12, 21, c('MALAYSIA', 'PAKISTAN'))
+datecountry_filter(clean_df, 2012, 03, 01, 2021, 12, 21, c('MALAYSIA', 'PAKISTAN'))
 }

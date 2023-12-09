@@ -32,7 +32,8 @@ Alternatively, you can specify specific column.
 }
 \examples{
 clean_df <- intial_cleaning()
-map <- clean_df \%>\% eq_map(annotation = "popup_text", minyear = 2012, maxyear = 2022, countries = c('IRAN', 'IRAQ'))
+eq_map(clean_df, annotation = "popup_text",
+        minyear = 2012, maxyear = 2022, countries = c('IRAN', 'IRAQ'))
 }
 \seealso{
 \code{\link[=datecountry_filter]{datecountry_filter()}}

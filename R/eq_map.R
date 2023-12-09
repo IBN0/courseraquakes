@@ -17,7 +17,8 @@
 #'
 #' @examples
 #' clean_df <- intial_cleaning()
-#' map <- clean_df %>% eq_map(annotation = "popup_text", minyear = 2012, maxyear = 2022, countries = c('IRAN', 'IRAQ'))
+#' eq_map(clean_df, annotation = "popup_text",
+#'         minyear = 2012, maxyear = 2022, countries = c('IRAN', 'IRAQ'))
 eq_map <- function(df, annotation = "popup_text", ...) {
   df <- df %>% datecountry_filter(...)
 

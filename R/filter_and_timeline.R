@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' clean_df <- initial_cleaning()
-#' filtered_df <- clean_df %>% datecountry_filter(2012, 03, 01, 2021, 12, 21, c('MALAYSIA', 'PAKISTAN'))
+#' datecountry_filter(clean_df, 2012, 03, 01, 2021, 12, 21, c('MALAYSIA', 'PAKISTAN'))
 datecountry_filter <-
   function(df,
            minyear = -2150,
@@ -52,7 +52,7 @@ datecountry_filter <-
 #'
 #' @examples
 #' clean_df <- initial_cleaning()
-#' timeline_plot <- clean_df %>% timeline(y = Country, nmax = 10, label = TRUE,
+#' timeline(data = clean_df, y = Country, nmax = 10, label = TRUE,
 #'                               minyear =  2012, maxyear = 2021, countries = c('ARGENTINA', 'PALESTINE'))
 timeline <- function(df,
                      y = NULL,
