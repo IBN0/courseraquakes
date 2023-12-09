@@ -31,7 +31,7 @@ and total death into popup information. Any missing information will be removed.
 Alternatively, you can specify specific column.
 }
 \examples{
-clean_df <- intial_cleaning()
+clean_df <- initial_cleaning()
 eq_map(clean_df, annotation = "popup_text",
         minyear = 2012, maxyear = 2022, countries = c('IRAN', 'IRAQ'))
 }

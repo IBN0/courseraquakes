@@ -16,7 +16,7 @@
 #' @export
 #'
 #' @examples
-#' clean_df <- intial_cleaning()
+#' clean_df <- initial_cleaning()
 #' eq_map(clean_df, annotation = "popup_text",
 #'         minyear = 2012, maxyear = 2022, countries = c('IRAN', 'IRAQ'))
 eq_map <- function(df, annotation = "popup_text", ...) {
