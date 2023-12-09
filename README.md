@@ -60,6 +60,13 @@ plot(timeline_plot)
 
 If the label is turned on, then you can determine if you want to limit the amount of label shown based on n highest magnitude earthquake. 
 
+
+```r
+timeline_plot <- timeline(clean_df, y = Country, minyear = 1500, maxyear = 2015, countries = c('SYRIA', 'EGYPT'),
+                          label = TRUE, nmax = 10)
+plot(timeline_plot)
+```
+
 <div class="figure">
 <img src="man/figures/README-timeline with label-1.png" alt="plot of chunk timeline with label" width="100%" />
 <p class="caption">plot of chunk timeline with label</p>
@@ -67,6 +74,37 @@ If the label is turned on, then you can determine if you want to limit the amoun
 Notice how we define the `y` axis. If not defined, then all earthquake will coalescence into one line.
 
 If you want to specify how you sort your data frame for label filtering/limiting, then you need to build your own ggplot2 data. 
+
+
+```r
+filtered_df  <- clean_df %>% datecountry_filter(minyear = 2001, maxyear = 2010, countries = c("VIETNAM", "PHILIPPINES"))
+finalplot <- ggplot() +
+    geom_timeline(
+      data = filtered_df,
+      mapping = aes(
+        x    = Date,
+        y    = Country,
+        size = Magnitude,
+        col  = `Total Deaths`
+      ),
+      alpha = 0.8
+    ) +
+    labs(x = "DATE")                                     +
+    scale_size_continuous (name = "Richter scale value") +
+    scale_color_continuous(name = "# deaths") +
+    theme_classic() + 
+    geom_timeline_label(
+      data = filtered_df,
+      mapping = aes(
+        x = Date,
+        y = Country,
+        label = Location,
+        Magnitude = `Total Deaths`
+      ),
+      nmax = 10
+    )
+plot(finalplot)
+```
 
 <div class="figure">
 <img src="man/figures/README-custom timeline-1.png" alt="plot of chunk custom timeline" width="100%" />
@@ -84,7 +122,7 @@ The package also have wrapper for leaflet function. This will return interactive
 map <- eq_map(df = clean_df, annotation = 'popup_text', minyear = 2001, maxyear = 2015, countries = c('CONGO', 'TANZANIA'))
 ```
 The resulting image will look like this 
-[](interactive_map.png "Interactive map example")
+[](man/figures/interactive_map.png "Interactive map example")
 
 Credit:
 
