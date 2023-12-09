@@ -140,3 +140,5 @@ finalplot <- ggplot() +
   )
 
 
+timeline(data = clean_df, y = Country, nmax = 10, label = TRUE,
+        minyear =  2012, maxyear = 2021, countries = c('ARGENTINA', 'PALESTINE'))

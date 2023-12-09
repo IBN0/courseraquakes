@@ -57,6 +57,16 @@ stat stripped of the \code{stat_} prefix (e.g. \code{"count"} rather than
 position adjustment function. Use the latter if you need to change the
 settings of the adjustment.}
 
+\item{...}{Other arguments passed on to layer(). These are often aesthetics, used to set an aesthetic to a fixed value, like colour = "red" or size = 3. They may also be parameters to the paired geom/stat.}
+
+\item{parse}{If TRUE, the labels will be parsed into expressions and displayed as described in ?plotmath.}
+
+\item{check_overlap}{If TRUE, text that overlaps previous text in the same layer will not be plotted.}
+
+\item{size.unit}{The unit used to determine the size of label}
+
+\item{na.rm}{If FALSE, missing values are removed with a warning. If TRUE, the default, missing values are silently removed}
+
 \item{show.legend}{logical. Should this layer be included in the legends?
 \code{NA}, the default, includes if any aesthetics are mapped.
 \code{FALSE} never includes, and \code{TRUE} always includes.
@@ -68,9 +78,7 @@ rather than combining with them. This is most useful for helper functions
 that define both data and aesthetics and shouldn't inherit behaviour from
 the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
 
-\item{nmax}{Optional, an integer expressing the amount of label you want to show}
-
-\item{Magnitude}{Optional, a column that will be used to sort the data frame}
+\item{nmax}{Optional, an integer expressing the amount of label you want to show, if you do use nmax, then you need to determine how to sort using Magnitude aes}
 }
 \value{
 ggplot2 label layer

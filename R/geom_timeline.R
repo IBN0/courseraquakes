@@ -78,6 +78,8 @@ GeomTimeline <- ggplot2::ggproto(
 #' To simplify data analysis, use \code{timeline} function
 #'
 #' @inheritParams ggplot2::layer
+#' @param na.rm If FALSE, the default, missing values are removed with a warning. If TRUE, missing values are silently removed
+#' @param ... Other arguments passed on to layer(). These are often aesthetics, used to set an aesthetic to a fixed value, like colour = "red" or size = 3. They may also be parameters to the paired geom/stat.
 #'
 #' @seealso [timeline()]
 #' @seealso [geom_timeline_label()]

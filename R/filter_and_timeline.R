@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' clean_df <- initial_cleaning()
-#' datecountry_filter(clean_df, 2012, 03, 01, 2021, 12, 21, c('MALAYSIA', 'PAKISTAN'))
+#' datecountry_filter(df = clean_df, 2012, 03, 01, 2021, 12, 21, c('MALAYSIA', 'PAKISTAN'))
 datecountry_filter <-
   function(df,
            minyear = -2150,
@@ -32,6 +32,7 @@ datecountry_filter <-
       })
     }
     df <- df %>% filter(.data$Date >= mindate & .data$Date <= maxdate)
+    return(df)
   }
 
 #' @title `Timeline construction`
@@ -52,7 +53,7 @@ datecountry_filter <-
 #'
 #' @examples
 #' clean_df <- initial_cleaning()
-#' timeline(data = clean_df, y = Country, nmax = 10, label = TRUE,
+#' timeline(df = clean_df, y = Country, nmax = 10, label = TRUE,
 #'                               minyear =  2012, maxyear = 2021, countries = c('ARGENTINA', 'PALESTINE'))
 timeline <- function(df,
                      y = NULL,
@@ -62,12 +63,8 @@ timeline <- function(df,
                      nmax = 0,
                      label = FALSE,
                      ...) {
-  filtered_df <-
-    df %>% datecountry_filter(# minyear = minyear,
-                              # maxyear = maxyear,
-                              # countries = countries,
+  filtered_df <- datecountry_filter(df = df,
                               ...)
-  # labeled <- filtered_df %>% nmax_sort(nmax = nmax)
   finalplot <- ggplot() +
     geom_timeline(
       data = filtered_df,

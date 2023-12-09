@@ -35,6 +35,6 @@ ggplot2 using \code{geom_timeline} and \code{geom_timeline_label}
 }
 \examples{
 clean_df <- initial_cleaning()
-timeline(data = clean_df, y = Country, nmax = 10, label = TRUE,
+timeline(df = clean_df, y = Country, nmax = 10, label = TRUE,
                               minyear =  2012, maxyear = 2021, countries = c('ARGENTINA', 'PALESTINE'))
 }
