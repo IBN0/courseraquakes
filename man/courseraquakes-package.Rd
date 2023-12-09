@@ -4,12 +4,12 @@
 \name{courseraquakes-package}
 \alias{courseraquakes}
 \alias{courseraquakes-package}
-\title{courseraquakes: What the Package Does (One Line, Title Case)}
+\title{courseraquakes: Clean Up Earthquake Data from NCIE}
 \description{
-What the package does (one paragraph).
+This package is final project for coursera course. It cleans up data and create timeline plot.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Ibrahim Nadiyan \email{ibrahimnadian@yahoo.co.id}
 
 }
 \keyword{internal}

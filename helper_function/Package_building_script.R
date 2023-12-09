@@ -68,6 +68,8 @@ usethis::use_import_from("htmltools", 'htmlEscape', load = F)
 usethis::use_import_from("rlang", 'list2', load = F)
 load_all()
 usethis::use_readme_rmd()
+use_vignette("courseraquqakes-vignette")
+build_rmd('vignettes/courseraquqakes-vignette.Rmd')
 usethis::use_gpl3_license()
 devtools::document()
 
